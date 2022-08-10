@@ -1,5 +1,5 @@
 body{
-    background-image: url('fundo.jpg');
+    background-image: url('assets/img/fundo.jpg');
     background-size: cover;
 }
 
@@ -19,7 +19,7 @@ header{
 header .logo img{
     max-width: 100%;
 }
-
+ 
 header .logo{
     max-width: 150px; 
 }
@@ -51,6 +51,7 @@ section{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
+    margin-bottom: 40px;
 }
 
 section .card{
@@ -71,9 +72,30 @@ section .card .card-body{
     padding: 10px;
 }
 
+.btn{
+    font-weight: bold;
+}
+
+/* aqui é para o imagem aumentar */
+.card:hover{
+    transition: 0.9s all ease;
+    transform: scale(1.1);
+    
+     
+}
+
+.btn:hover{
+    background-color: red;
+    border: none;  
+}
+
 h1{
     /* estou fazendo o h1 pega da primeira até a ultima coluna */
     grid-column: 1/ -1;
+}
+
+h5{
+    font-weight: bold;
 }
 
 
