@@ -38,10 +38,9 @@ label{
 input{
     width: 249px;
     margin-right: 10px;
-    margin-bottom: 10px;
-    border: none;
+    margin-bottom: 10px; 
 }
- 
+  
 button{
     width: 100%; 
 }
