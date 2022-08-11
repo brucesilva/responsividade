@@ -1,0 +1,63 @@
+body{
+    background-image: url('../img/fundo.jpg');
+    background-size: cover;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
+}
+
+.container-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    max-width: 300px;  
+    border: 2px solid #fff;
+    border-radius: 3%;
+    flex-direction: column;
+    box-shadow: 2px 2px #fff;
+}
+
+img{
+    max-width: 100%;
+}
+label{
+    font-weight: bold;
+}
+
+.formulario{
+    max-width: 250px;
+    /* border: 1px solid red; */
+    margin-top: 30px;
+    color: white;
+}
+input{
+    width: 249px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: none;
+}
+ 
+button{
+    width: 100%; 
+}
+.btn{
+    font-weight: bold;
+}
+
+@media (max-width:280px){ 
+    .container-login{
+        
+        max-width: 267px;  
+        border: 2px solid #fff;
+        border-radius: 3%;
+        flex-direction: column;
+        box-shadow: 2px 2px #fff;
+    }
+}
+
+ 
