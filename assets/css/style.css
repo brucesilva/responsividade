@@ -1,5 +1,5 @@
 body{
-    background-image: url('assets/img/fundo.jpg');
+    background-image: url('../img/fundo.jpg');
     background-size: cover;
 }
 
@@ -15,13 +15,14 @@ header{
     /* border: 1px solid white; */
     background-color: #3D3747;
 }
-
+ 
 header .logo img{
-    max-width: 100%;
+    max-width: 100%; 
 }
  
 header .logo{
     max-width: 150px; 
+    /* border: 1px solid red; */
 }
 
 header .title{
@@ -38,10 +39,16 @@ header .title{
  
 
 /* cards */
+
+section .card .imgUser{
+    max-width: 200px;
+    height: 200px;
+}
+
 section .card img{
     max-width: 100%;
     border-radius: 100%;
-    padding: 30px;
+    padding: 10px;
 }
 
 section{
@@ -75,19 +82,25 @@ section .card .card-body{
 .btn{
     font-weight: bold;
 }
-
+ 
 /* aqui é para o imagem aumentar */
 .card:hover{
     transition: 0.9s all ease;
-    transform: scale(1.1);
-    
-     
+    transform: scale(1.1);  
 }
 
 .btn:hover{
     background-color: red;
     border: none;  
 }
+
+.btn:disabled:hover{
+    background-color:#0069d9; 
+}
+
+/* .btn{
+    display: none;
+} */
 
 h1{
     /* estou fazendo o h1 pega da primeira até a ultima coluna */
