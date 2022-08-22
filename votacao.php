@@ -7,11 +7,18 @@ require_once('app/model/model.allUser.php');
 
 $logado = $_SESSION['login'];
 
+// $idUser = $_SESSION['idUser'];
+
 if ($logado == '') {
   header('location:index.php');
 }
 
 foreach ($allUser as $user) {
+  // echo $user['id'], "<br>";
+  // echo "Quem está logado é o ", $logado, "<br>";
+  if ($logado == $user['user']) {
+    $idLogado = $user['id'];
+  }
 }
 
 ?>
@@ -67,19 +74,35 @@ foreach ($allUser as $user) {
   <!-- <form action="app/controllers/controller.votacao.php?<= $user['user'] ?>" method="POST"> -->
   <form action="" method="POST">
     <section>
-
       <?php
       foreach ($allUser as $user) { ?>
+
+        <?php
+        // aqui vamos tirar o card do usuário logado no sistema
+        if ($logado == $user['user']) {  ?>
+        <?php } ?>
+
         <div class="card" style="width: 15rem;">
           <img class="card-img-top imgUser" src="<?php echo $user['pathImg'] ?>">
           <div class="card-body">
             <h5 class="card-title"><?php echo ucfirst($user['user']) ?> </h5>
             <p class="card-text">Analista de Suporte</p>
-            <!-- aqui estou passando o usuário que a pessoa votou -->
-            <a href="app/controllers/controller.votacao.php?user=<?= $user['user'] ?>" class="btn btn-primary btn-block">Votar</a>
+
+            <?php
+            // aqui devemos bloquear o botão
+            if ($logado == $user['user']) { ?>
+              <div class="removeBotao">
+                <a href="app/controllers/controller.votacao.php?user=<?= $user['user'] ?>" class="btn btn-primary btn-block">Votar</a>
+              </div>
+            <?php } else { ?>
+
+              <a href="app/controllers/controller.votacao.php?user=<?= $user['user'] ?>" class="btn btn-primary btn-block">Votar</a>
+
+            <?php } ?>
           </div>
         </div>
       <?php }
+
       $_SESSION['userLogado'] = $logado;
       ?>
     </section>

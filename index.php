@@ -21,8 +21,35 @@ session_destroy();
 
 <body>
 
-    <?php
 
+    <?php
+    //  Se deu tudo certo na votaão vamos agradecer o usuário pelo seu voto
+    if (isset($_GET['sucess'])) { ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert" style="text-align:center;">
+            <strong>Voto inserido com sucesso, Obrigado ;)
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span class="close" aria-hidden="true">&times;</span>
+                </button>
+        </div>
+    <?php } ?>
+
+
+    <?php
+    //  Se deu tudo certo na votaão vamos agradecer o usuário pelo seu voto
+    if (isset($_GET['v'])) {
+        if ($_GET['v'] == 2) {  ?>
+
+            <div class="alert alert-success alert-dismissible fade show" role="alert" style="text-align:center;">
+                <strong>Usuário já votou esse mês
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span class="close" aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+
+    <?php }
+    } ?>
+
+    <?php
     //  verificando se existe sessão
     if (isset($_GET['s'])) {
         $verifySession = $_GET['s'];

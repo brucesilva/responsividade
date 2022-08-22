@@ -37,10 +37,9 @@
                     <label for="imagem">Selecione sua foto:</label>
                     <input class="radius" type="file" name="arquivo" id="arquivo" required>
 
-
                     <button class="btn btn-danger" onclick="atheticationLogin();">Entrar</button>
-                </form>
 
+                </form>
 
             </div> <!-- formulario -->
         </div><!-- container-login -->

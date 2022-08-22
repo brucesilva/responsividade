@@ -47,9 +47,6 @@ class votacao
         }
     }
 
-
-
-
     // função responsavel para incrementar os votos do usuário
     public function updateQtdVotos($userVotado)
     {

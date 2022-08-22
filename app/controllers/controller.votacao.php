@@ -8,8 +8,8 @@ $userLogado = $_SESSION['userLogado'];
 $userVotado = $_GET['user'];
 // $idUser = $_SESSION['idUser'];
 
-echo "Bem vindo ", $userLogado, "<br>";
-echo "Votou em ", $userVotado, "<br>";
+// echo "Bem vindo ", $userLogado, "<br>";
+// echo "Votou em ", $userVotado, "<br>";
 // echo "O id do usuário que voltou é o ", $idUser;
 
 // aqui pegando o valor do id do usuário logado
@@ -31,4 +31,6 @@ $verificaSeInseriu = $votacao->votacao($votacao);
 if ($verificaSeInseriu == 13) {
     header('location:../../votacao.php?erro=13');
     // echo "Estou no controller e não achamos o id do usuário";
+} else {
+    header('location:../../index.php?sucess=1');
 }

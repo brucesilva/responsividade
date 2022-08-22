@@ -27,16 +27,65 @@ class login
 
     public function athetication($login)
     {
+
         $sql = "SELECT * FROM cadastro WHERE user = :user and senha = :pass";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindValue(':user', $login->__get('user'));
         $stmt->bindValue(':pass', $login->__get('pass'));
         $stmt->execute();
-        return $result = $stmt->rowCount();
 
-        // echo "<pre>";
-        // echo print_r($stmt);
-        // echo "</pre>";
+        echo "O user passado foi ", $login->__get('user'), "<br>";
+        echo "senha ", $login->__get('pass'), "<br>";
+
+        // aqui se encontrou o usário
+        if ($stmt->rowCount() > 0) {
+            $IdUser = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            // aqui o usuário foi encontado
+            foreach ($IdUser as $userId) {
+                $userJaVotou = $this->verificaSituacao($userId['id']);
+
+                if ($userJaVotou == 1) {
+                    // echo "Usuário já votou <br>";
+                    return 2;
+                    die();
+                }
+
+                if ($userJaVotou == 0) {
+                    return 1;
+                }
+            }
+            // return 1;
+        } else {
+            return 0;
+            // die();
+        }
+    }
+
+    public function verificaSituacao($idUser)
+    {
+        // aqui é para verificar se a pessoa votou ou não 
+        $sqlSituacao = "SELECT idUser FROM resultadovotos WHERE idUser = :idUser and jaVotou = :jaVotou";
+        $stmtSituacao = $this->pdo->prepare($sqlSituacao);
+        $stmtSituacao->bindValue(':idUser', $idUser);
+        $stmtSituacao->bindValue(':jaVotou', 'Sim');
+        $stmtSituacao->execute();
+        $user = $stmtSituacao->rowCount();
+
+        $users = $stmtSituacao->fetchall(PDO::FETCH_ASSOC);
+
+        foreach ($users as $jaVotou) {
+        }
+        // aqui já votou
+        if ($jaVotou['idUser'] == $idUser) {
+            return 1;
+            die();
+        }
+        // aqui não votou
+        if ($jaVotou['idUser'] != $idUser) {
+            return 0;
+            die();
+        }
     }
 
     public function cadUser($cadastro)
