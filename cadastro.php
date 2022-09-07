@@ -24,7 +24,6 @@
             <div class="formulario">
                 <form action="app/controllers/controller.cadastroUser.php" method="post" enctype="multipart/form-data">
 
-
                     <label for="name">Nome:</label>
                     <input class="radius" type="text" name="user" id="name" required>
 

@@ -7,6 +7,8 @@ require_once('app/model/model.allUser.php');
 
 $logado = $_SESSION['login'];
 
+// echo "Usuário logado é o(a) ", $logado;
+
 // $idUser = $_SESSION['idUser'];
 
 if ($logado == '') {
@@ -80,13 +82,14 @@ foreach ($allUser as $user) {
         <?php
         // aqui vamos tirar o card do usuário logado no sistema
         if ($logado == $user['user']) {  ?>
-        <?php } ?>
+
+        <?php   } ?>
 
         <div class="card" style="width: 15rem;">
           <img class="card-img-top imgUser" src="<?php echo $user['pathImg'] ?>">
           <div class="card-body">
             <h5 class="card-title"><?php echo ucfirst($user['user']) ?> </h5>
-            <p class="card-text">Analista de Suporte</p>
+            <p class="card-text"><?php echo ucfirst($user['setor']) ?></p>
 
             <?php
             // aqui devemos bloquear o botão
@@ -94,6 +97,9 @@ foreach ($allUser as $user) {
               <div class="removeBotao">
                 <a href="app/controllers/controller.votacao.php?user=<?= $user['user'] ?>" class="btn btn-primary btn-block">Votar</a>
               </div>
+
+              <a href="dadosCadastrais.php?idUser=<?= $user['id'] ?>" class="btn btn-danger btn-block">Atualizar informações</a>
+
             <?php } else { ?>
 
               <a href="app/controllers/controller.votacao.php?user=<?= $user['user'] ?>" class="btn btn-primary btn-block">Votar</a>

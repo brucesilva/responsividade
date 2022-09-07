@@ -88,6 +88,7 @@ session_destroy();
 
             <img src="assets/img/funcionarioMes.png" alt="">
             <h3>Login</h3>
+
             <div class="formulario">
                 <form action="app/controllers/controller.athetication.php" method="post">
 
@@ -106,7 +107,6 @@ session_destroy();
                 <div class="cadastro">
                     É novo por aqui? <a href="cadastro.php"> Clique aqui</a>
                 </div>
-
 
             </div> <!-- formulario -->
         </div><!-- container-login -->

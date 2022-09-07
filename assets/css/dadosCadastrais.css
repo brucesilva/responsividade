@@ -1,0 +1,84 @@
+body{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('../img/fundo.jpg');
+    background-size: cover;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh; 
+} 
+
+img{
+    max-width: 100%;
+    height: 150px;
+    border-radius: 100%; 
+}
+
+h3{
+    text-align: center;
+    color: white;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 225px;
+}
+
+.img{
+    display: flex; 
+    max-width: 140px; 
+    align-self: center; 
+    margin-bottom: 1rem; 
+}
+
+.cadastro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 270px;  
+    border: 2px solid #fff;
+    border-radius: 3%;
+    flex-direction: column;
+    box-shadow: 2px 2px #fff;
+}
+
+.formulario{
+    max-width: 250px;
+    /* border: 1px solid red; */
+    
+    color: white;
+} 
+
+input[type="file"]{  
+    cursor: pointer; 
+    /* background-color: #333; */
+    border-radius:5%;
+    align-self: center;
+    font-size: large;
+    font-weight: bold;
+    width: 157px;
+    /* background-color: darkgray; */
+     
+}
+input[type="text"]{
+    width: 100%;
+}
+ 
+label{
+    margin-top: 3px;
+    font-weight: bold;
+    margin-bottom: 2px;
+    color: rgb(240, 216, 216);
+    
+}
+
+.btn{
+    margin-top: 0.7em; 
+}

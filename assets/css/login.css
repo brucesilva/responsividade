@@ -14,7 +14,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
+    padding: 10px;
     max-width: 300px;  
     border: 2px solid #fff;
     border-radius: 3%;
@@ -23,7 +23,7 @@ body{
 }
 
 img{
-    max-width: 100%;
+    max-width: 80%;
 }
 
 h3{

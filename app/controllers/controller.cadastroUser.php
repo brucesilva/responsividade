@@ -49,22 +49,11 @@ if (isset($_FILES['arquivo'])) {
 
         $retorno = $cadastro->cadUser($cadastro);
 
-        if ($retorno == 1) {
-            header('location:../../index.php');
-        } else {
-            echo "Não foi possivel cadastrar, por favor tente novamente em alguns minutos";
-        }
-
-        // ------- Inserir caminho da imagem
-        // $sql = "INSERT INTO login VALUES  (0, :user, :pass,:setor :nomeImg, :caminho)";
-        // $stmt = $pdo->prepare($sql);
-        // $stmt->bindValue(':user', $user);
-        // $stmt->bindValue(':pass', $pass);
-        // $stmt->bindValue(':nomeImg', $nomeDoArquivo);
-        // $stmt->bindValue(':caminho', $pasta . $novoNomeDoArquivo . "." . $extensao);
-        // $stmt->execute();
-
-        // echo "passei pelo execute";
+        // if ($retorno == 1) {
+        //     header('location:../../index.php');
+        // } else {
+        //     echo "Não foi possivel cadastrar, por favor tente novamente em alguns minutos";
+        // }
     } else {
         die("Não conseguimos gravar sua imagem, por favor tente novamente");
     }
